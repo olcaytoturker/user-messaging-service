@@ -6,7 +6,7 @@
 
 [Node.js](https://nodejs.org/en/)
 
-Socket.io
+[Socket.io](https://socket.io/)
 
 [Docker](https://www.docker.com/)
 
@@ -20,14 +20,14 @@ Socket.io
 
 ## For running the project
 
- run 'docker-compose build'
+ run `docker-compose build`
 
- run 'docker-compose up'
+ run `docker-compose up`
 
- run 'docker-compose down' for terminating the run.
+ run `docker-compose down` for terminating the run.
 ## For running unit tests
 
- run 'npm i && npm test'
+ run `npm i && npm test`
 
 ## ENDPOINTS
 
