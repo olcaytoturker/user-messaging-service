@@ -1,4 +1,4 @@
-## This project is an user messaging service written using NodeJs.
+## This project is an user messaging service written using NodeJs
 
 **Technologies used:**
 
