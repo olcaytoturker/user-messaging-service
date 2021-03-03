@@ -1,0 +1,23 @@
+version: "3"
+services:
+  web:
+    build: .
+    ports:
+      - "8080:9876"
+    links:
+      - mongo
+    environment:
+      #REDIS_URL: "redis://cache"
+      PORT : 9876
+      MONGO_URL : "mongodb://mongo:27017/armut-app"
+      TEST_MONGO_URL: "mongodb+srv://olcayto:olcayto123@cluster0.fensr.mongodb.net/armut-app?retryWrites=true&w=majority"
+
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+  #redis:
+  #  image: redis
+  #  container_name: cache
+  #  expose:
+  #    - 6379
