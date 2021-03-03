@@ -138,6 +138,7 @@ Gets messages between specific two users.
 **Method:** `GET` \
 **Body:** {"senderId": "603f8589010d240012357a3b",
             "receiverId": "603f856d010d240012357a38"}
+            
 **Response:**
 
 {
