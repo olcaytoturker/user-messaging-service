@@ -4,16 +4,7 @@ const bcrypt = require('bcrypt');
 const { ErrorMessage } = require("../constants/errors");
 const { LogType } = require("../constants/log");
 
-/**
- * Performs login for vendor or customer.
- * @param {
-  *  userType: "customer" | "vendor",
-  *  email: String,
-  *  password: String
-  * } params
-  *
-  * @returns {userId | false | userStatus}
-  */
+
  module.exports.login = async (body) => {
    try {
      if (!body.email || !body.password) {
@@ -39,7 +30,6 @@ const { LogType } = require("../constants/log");
      }
 
      const valid = bcrypt.compareSync(body.password, user.password);
-     console.log(valid);
      if (user && valid) {
       await Log.create({
         logOperation: "Login",
@@ -69,9 +59,7 @@ const { LogType } = require("../constants/log");
   }
  };
 
-/**
- * Performs signup for a user.
-    */
+
    module.exports.signup = async (body) => {
      try {
       if (!body.email || !body.password || !body.username) {

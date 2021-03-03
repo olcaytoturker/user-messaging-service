@@ -6,7 +6,6 @@ const interaction = require("../views/interaction");
 
   app.post("/message", async (request, response) => {
     await interaction.sendMessage(request.body, function(sock_response){
-      console.log(sock_response);
       if (sock_response.success) {
         response.respond(sock_response.code, "OK", { message_id: sock_response.payload.id, message: sock_response.payload.message});
       } else {
@@ -18,7 +17,7 @@ const interaction = require("../views/interaction");
   app.post("/ban", async (request, response) => {
     const result = await interaction.ban(request.body);
     if (result.success) {
-      response.respond(result.code, "OK", {banneds: result.banneds, contacts: result.contacts});
+      response.respond(result.code, "OK");
     } else {
       response.respond(result.code, result.message);
     }

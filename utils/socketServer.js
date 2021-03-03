@@ -16,7 +16,6 @@ module.exports.initialize = (app) => {
   io.on("connection", (socket) => {
     socket.on("discover", async (payload, response) => {
       try {
-        console.log("discover");
         if (!payload.id) {
           return response({ success: false, code: 400, message: ErrorMessage.MISSING_PARAMETER });
         }

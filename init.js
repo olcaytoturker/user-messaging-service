@@ -1,9 +1,7 @@
 const mongoose = require("mongoose");
 const Log = require("./models/log").Log;
 const { LogType } = require("./constants/log");
-/**
- * Connect to mongodb database.
- */
+
 module.exports.initialize = async function () {
   try {
     await mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true });
